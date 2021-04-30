@@ -15,6 +15,13 @@ Feature: Register
     Given I open New Customer page
     When I input to Customer Form with Data
       | Name    | DateOfBirth | Address            | City        | State     | Pin    | Phone      | Email       | Password |  
-      | Hung Ho | 02/11/1996  | Phan Xich Long | Ho Chi Minh | Phu Nhuan | 123456 | 0987654321 | tanhung9966@gmail.com | 123123   | 
+      | Hung Ho | 02/11/1996  | Phan Xich Long | Ho Chi Minh | Phu Nhuan | 123456 | 0987654321 | tanhung96@gmail.com | 123123   | 
     Then Verify message Customer Registered Successfully!!! displayed success
- 
+ @new_account
+   Scenario: Create New Account
+    Given I click New Account
+    When I input CustomerID 
+    And I select Account type
+    And I input intital despoit
+    And I press submit
+    Then Current amount will be as same as value intital despoit 

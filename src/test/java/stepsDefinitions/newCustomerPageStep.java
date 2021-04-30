@@ -20,8 +20,11 @@ import cucumberOptions.Hooks;
 
 public class newCustomerPageStep extends AbstracPage {
 	WebDriver driver;
+	DataHelper dataTest;
+	static String customerID;
 	public newCustomerPageStep() {
 		this.driver = Hooks.openAndQuitBrowser();
+		dataTest = DataHelper.getFakeData();
 	}
 	@Given("^I open New Customer page$")
 	public void iOpenNewCustomerPage()  {
@@ -42,7 +45,7 @@ public class newCustomerPageStep extends AbstracPage {
 	    sendKeyElement(driver, newCustomerUI.STATE, customer.get(0).get("State"));
 	    sendKeyElement(driver, newCustomerUI.PIN, customer.get(0).get("Pin"));
 	    sendKeyElement(driver, newCustomerUI.TELE, customer.get(0).get("Phone"));
-	    sendKeyElement(driver, newCustomerUI.EMAIL_TEXTBOX, customer.get(0).get("Email"));
+	    sendKeyElement(driver, newCustomerUI.EMAIL_TEXTBOX, dataTest.getEmailAddress());
 	    sendKeyElement(driver, newCustomerUI.PASSWORD_TEXTBOX, customer.get(0).get("Password"));
 	    clickToElement(driver, newCustomerUI.SUBMIT);
 	}
@@ -50,7 +53,8 @@ public class newCustomerPageStep extends AbstracPage {
 	@Then("^Verify message Customer Registered Successfully!!! displayed success$")
 	public void verifyMessageCustomerRegisteredSuccessfullyDisplayedSuccess()  {
 		sleepInSecond(3);
-	   Assert.assertEquals(newCustomerUI.MESSAGE_SUCCESS, "Verify message Customer Registered Successfully!!!");;
+		customerID = getElementText(driver, newCustomerUI.CUSTOMER_ID);
+	   Assert.assertEquals(getElementText(driver, newCustomerUI.MESSAGE_SUCCESS) , "Verify message Customer Registered Successfully!!!");;
 	}
 
 }
