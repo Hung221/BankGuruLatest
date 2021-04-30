@@ -26,14 +26,14 @@ public class newAccountPageStep extends AbstracPage {
 
 	@When("^I click to Submit button$")
 	public void iClickToSubmitButton()  {
-		waitToElementClickAble(driver, newAccountUI.EMAIL_REGISTER);
-		clickToElement(driver, newAccountUI.EMAIL_REGISTER);
+		waitToElementClickAble(driver, newAccountUI.SUBMIT_BUTTON);
+		clickToElement(driver, newAccountUI.SUBMIT_BUTTON);
 	}
 
 	@Then("^Get User and password infor$")
 	public void getUserAndPasswordInfor()  {
-		waitToElementVisible(driver, newAccountUI.PASSWORD_TEXT_VALUE);
-		username =  getElementText(driver, newAccountUI.PASSWORD_TEXT_VALUE);
+		waitToElementVisible(driver, newAccountUI.USER_ID_TEXT_VALUE);
+		username =  getElementText(driver, newAccountUI.USER_ID_TEXT_VALUE);
 		waitToElementVisible(driver, newAccountUI.PASSWORD_TEXT_VALUE);
 		password = getElementText(driver, newAccountUI.PASSWORD_TEXT_VALUE);   
 	}

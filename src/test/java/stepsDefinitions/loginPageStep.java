@@ -32,11 +32,7 @@ public class loginPageStep extends AbstracPage {
 		sendKeyElement(driver, loginUI.USER_TEXTBOX, newAccountPageStep.username);
 		waitToElementVisible(driver, loginUI.PASS_TEXTBOX);
 		sendKeyElement(driver, loginUI.PASS_TEXTBOX, newAccountPageStep.password);
+		clickToElement(driver, loginUI.LOGIN_BUTTON);
 	}
 
-	@Then("^Home page display$")
-	public void homePageDisplay()  {
-		sleepInSecond(3);
-		Assert.assertEquals(getCurrentPageTitle(driver), "Guru99 Bank Manager HomePage");
-	}
 }
