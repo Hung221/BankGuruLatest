@@ -9,6 +9,7 @@ import commons.DataHelper;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumberOptions.Hooks;
+
 public class newAccountPageStep extends AbstracPage {
 	DataHelper dataTest;
 	static String username, password;
