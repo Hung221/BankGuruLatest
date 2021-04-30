@@ -3,6 +3,7 @@ package PageUI;
 public class newAccountBankUI {
 	public static final String NEW_ACCOUNT_LINK = "//a[text()='New Account']";
 	public static final String CUSTOMER_ID = "//input[@name='cusid']";
+	public static final String ACCOUNT_ID_VALUE = "//td[text()='Account ID']/following-sibling::td";
 	public static final String INTITAL_DESPOIT = "//input[@name='inideposit']";
 	public static final String SUBMIT = "//input[@name='button2']";
 	public static final String SECLECT_ACCOUNT = "//select[@name='selaccount']";

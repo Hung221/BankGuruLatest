@@ -12,6 +12,7 @@ import cucumber.api.java.en.When;
 import cucumberOptions.Hooks;
 
 public class newAccountBankStep extends AbstracPage {
+	static String accountId;
 	String amount = "5000";
 	WebDriver driver;
 	public newAccountBankStep() {
@@ -48,6 +49,7 @@ public class newAccountBankStep extends AbstracPage {
 	    sleepInSecond(1);
 	    waitToElementVisible(driver, newAccountBankUI.CURRENT_AMOUNT);
 	    Assert.assertEquals(getElementText(driver, newAccountBankUI.VALUE_CURRENT_AMOUNT), amount);
+	    accountId = getElementText(driver, newAccountBankUI.ACCOUNT_ID_VALUE);
 	    
 	}
 }

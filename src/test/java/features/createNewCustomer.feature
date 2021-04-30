@@ -25,3 +25,11 @@ Feature: Register
     And I input intital despoit
     And I press submit
     Then Current amount will be as same as value intital despoit 
+	@desposit
+	Scenario: Despoit Money to an account
+	Given I click Deposit 
+	When I input account number
+	And I input amount
+	And I input Description
+	And I submit 
+	Then The mount is deposited successfully

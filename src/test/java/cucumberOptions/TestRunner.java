@@ -16,8 +16,8 @@ import cucumber.api.junit.Cucumber;
 		monochrome = true,
 		plugin = {"pretty","html:target/site/cucumber-report-default","json:target/site/cucumber.json"},
 		snippets = SnippetType.CAMELCASE, 
-		tags = {"@register_login,@new_customer,@new_account"})
-		//tags = {"@new_account"})
+		tags = {"@register_login,@new_customer,@new_account,@desposit"})
+		//tags = {"@desposit"})
 
 public class TestRunner {
 
